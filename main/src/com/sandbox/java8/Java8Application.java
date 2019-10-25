@@ -14,6 +14,8 @@ public class Java8Application {
 
         if (str == null || str.trim().isEmpty()) {
             System.out.println(str + "--> This string is blank");
+        } else {
+            System.out.println(str + " --> This string is NOT blank!");
         }
     }
 
@@ -54,9 +56,9 @@ public class Java8Application {
     }
 
     public void splitStringByLines(String str) {
-        System.out.println(str);
-        List<String> stringList = Arrays.asList(str.split(str));
-        stringList.stream().forEach(s -> System.out.println(s));
+        String[] strSplit = str.split("\\s*,\\s*");
+        List<String> result = Arrays.stream(strSplit).collect(Collectors.toList());
+        result.stream().forEach(s -> System.out.println(s));
     }
 
 }
