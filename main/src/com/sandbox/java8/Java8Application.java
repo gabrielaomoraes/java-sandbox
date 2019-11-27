@@ -3,8 +3,12 @@ package com.sandbox.java8;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -59,6 +63,23 @@ public class Java8Application {
         String[] strSplit = str.split("\\s*,\\s*");
         List<String> result = Arrays.stream(strSplit).collect(Collectors.toList());
         result.stream().forEach(s -> System.out.println(s));
+    }
+
+    public void collectionsInitialization() {
+        // List
+        ArrayList<String> foo = new ArrayList<String>();
+        foo.add("java");
+        foo.add("php");
+        foo.add("c++");
+
+        Collections.unmodifiableCollection(Arrays.asList("java", "php", "c++"));
+
+        // Map
+        Map<Integer, String> map = new HashMap<Integer, String>();
+        map.put(20, "twenty");
+        map.put(30, "thirty");
+        map.put(40, "forty");
+
     }
 
 }
